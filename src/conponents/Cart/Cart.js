@@ -54,7 +54,7 @@ const Cart = (props) => {
   const onConfirmCheckOutHandler = async (userData) => {
     setIsSubmiting(true);
     try {
-      const response = await fetch(
+      await fetch(
         "https://react-http-d79c3-default-rtdb.firebaseio.com/order.json",
         {
           method: "POST",
@@ -64,7 +64,6 @@ const Cart = (props) => {
           }),
         }
       );
-      const data = await response.json();
     } catch (error) {
       console.log(error.message);
     }
